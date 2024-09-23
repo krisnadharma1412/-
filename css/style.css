@@ -81,3 +81,63 @@ body {
 #hamburger-menu {
     display: none;
 }
+
+/* Navbar Extra */
+.navbar-extra {
+  display: flex;
+  align-items: center;
+}
+
+/* Switch language button should be at the far right */
+.language-selector {
+  margin-left: auto; /* Memastikan tombol switch berada di pojok kanan */
+  position: relative;
+  display: inline-block;
+}
+
+.btn-lang-selector {
+  background-color: var(--bg);
+  border: 1px solid var(--primary);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.btn-lang-selector:hover {
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown for language options */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg);
+  min-width: 160px;
+  border: 1px solid var(--primary);
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown a {
+  color: #fff;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s;
+  font-size: 1.2rem;
+}
+
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+}
+
+.dropdown.active {
+  display: block;
+}

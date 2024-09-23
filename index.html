@@ -16,6 +16,11 @@
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- Switch Language -->
+    <title>Language Switcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
     <!-- my style -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -34,6 +39,16 @@
         <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        <div class="language-selector"></div>
+          <button class="btn-lang-selector" onclick="toggleDropdown()">
+              <i class="fas fa-globe"></i> Language <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown" id="languageDropdown">
+              <a href="#">English (EN)</a>
+              <a href="#">Bahasa Indonesia (ID)</a>
+              <a href="#">日本語 (JP)</a>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- Navbar Start -->
@@ -41,6 +56,20 @@
     <!-- Feather Icons -->
     <script>
       feather.replace();
+
+      function toggleDropdown() {
+        var dropdown = document.getElementById("languageDropdown");
+        dropdown.classList.toggle("active");
+      }
+
+      // Optional: Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.closest('.language-selector')) {
+            var dropdown = document.getElementById("languageDropdown");
+            dropdown.classList.remove("active");
+        }
+      }
+
     </script>
   </body>
 </html>
